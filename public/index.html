@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lọc sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lọc sản phẩm</h1>
+    <div class="filter-container">
+    <input type="text" id="name" placeholder="Tên sản phẩm">
+    
+    <select id="category">
+        <option value="">Tất cả loại sản phẩm</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Điện thoại">Điện thoại</option>
+        <option value="Phụ kiện">Phụ kiện</option>
+        <option value="Màn hình">Màn hình</option>
+        <option value="Đồng hồ thông minh">Đồng hồ thông minh</option>
+        <option value="Thiết bị đọc sách">Thiết bị đọc sách</option>
+    </select>
+
+    <select id="minPrice">
+        <option value="">Tất cả giá tối thiểu</option>
+        <option value="2000000">2,000,000</option>
+        <option value="3000000">3,000,000</option>
+        <option value="8000000">8,000,000</option>
+        <option value="10000000">10,000,000</option>
+        <option value="20000000">20,000,000</option>
+    </select>
+
+    <select id="maxPrice">
+        <option value="">Tất cả giá tối đa</option>
+        <option value="3000000">3,000,000</option>
+        <option value="4000000">4,000,000</option>
+        <option value="10000000">10,000,000</option>
+        <option value="20000000">20,000,000</option>
+        <option value="30000000">30,000,000</option>
+        <option value="40000000">40,000,000</option>
+    </select>
+
+    <button id="filterBtn">Lọc</button>
+</div>
+
+    <div id="product-list" class="product-list"></div>
+    <script src="script.js"></script>
+</body>
+</html>
