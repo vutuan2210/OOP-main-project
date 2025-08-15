@@ -16,6 +16,7 @@ input, button {
     padding: 10px;
     margin: 5px;
     margin-top: 0px;
+    justify-content: center;
 }
 
 .product-list {
@@ -82,4 +83,5 @@ input, button {
     gap: 10px;
     margin-bottom: 20px;
     justify-content: center;
-}
+} 
+
