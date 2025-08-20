@@ -1,3 +1,4 @@
+
 async function fetchProducts() {
     const name = document.getElementById('name').value;
     const category = document.getElementById('category').value;
@@ -30,15 +31,24 @@ function renderProducts(products) {
         list.appendChild(card);
     });
 }
-document.getElementById('name').addEventListener('input', fetchProducts);
-document.getElementById('category').addEventListener('change', fetchProducts);
-document.getElementById('minPrice').addEventListener('change', fetchProducts);
-document.getElementById('maxPrice').addEventListener('change', fetchProducts);
+
+// Debounce function call api sau 300ms kể từ lần nhập cuối cùng
+function debounce(fn, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn.apply(this, args), delay);
+    };
+}
+
+const fetchProductsDebounced = debounce(fetchProducts, 300);
+
+document.getElementById('name').addEventListener('input', fetchProductsDebounced);
+document.getElementById('category').addEventListener('change', fetchProductsDebounced);
+document.getElementById('minPrice').addEventListener('change', fetchProductsDebounced);
+document.getElementById('maxPrice').addEventListener('change', fetchProductsDebounced);
 document.getElementById('filterBtn').addEventListener('click', fetchProducts);
-document.getElementById('filterBtn').addEventListener('click', fetchProducts);
 
+// Tải toàn bộ khi mở
 
-
-
-// Tải toàn bộ khi mở trang
-fetchProducts();
+fetchProducts()
